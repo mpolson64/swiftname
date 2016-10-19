@@ -16,6 +16,7 @@
     "url": "https://github.com/mpolson64/swiftname/issues"
   },
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "fs": "0.0.1-security"
   }
 }
