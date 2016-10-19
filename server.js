@@ -1,5 +1,6 @@
 var fs = require('fs');
 var express = require('express');
+var pug = require('pug');
 app = express();
 
 var adjectives = fs.readFileSync('adjectives.txt').toString().split('\n');
@@ -52,8 +53,13 @@ function generateBatch(size) {
     return ids;
 }
 
+app.use(express.static('public'));
+app.set('view engine', 'pug');
+
 app.get('/', function(req, res) {
-    res.send(generateBatch(1)[0]);
+    res.render('index', {
+        idList: generateBatch(1)[0]
+    });
 });
 
 app.get('/:size', function(req, res) {
@@ -61,7 +67,25 @@ app.get('/:size', function(req, res) {
 
     out = "";
     for(i = 0; i < req.params.size; i++) {
-        out += batch[i] + "</br>";
+        out += batch[i] + "<br />";
+    }
+
+    res.render('index', {
+        idList: out
+    });
+
+});
+
+app.get('/minimal', function(req, res) {
+    res.send(generateBatch(1)[0]);
+});
+
+app.get('/minimal/:size', function(req, res) {
+    batch = generateBatch(req.params.size);
+
+    out = "";
+    for(i = 0; i < req.params.size; i++) {
+        out += batch[i] + "<br />";
     }
 
     res.send(out);
