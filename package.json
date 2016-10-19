@@ -1,6 +1,6 @@
 {
   "name": "swiftname",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "No-fuss website for swiftly generating human-readable, memorable device IDs",
   "main": "index.js",
   "scripts": {
