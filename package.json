@@ -1,0 +1,21 @@
+{
+  "name": "swiftname",
+  "version": "0.0.0",
+  "description": "No-fuss website for swiftly generating human-readable, memorable device IDs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpolson64/swiftname.git"
+  },
+  "author": "mpolson64",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpolson64/swiftname/issues"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
